@@ -8,7 +8,11 @@ import { ListAddressComponent } from './component/list-address/list-address.comp
 import { NavbarComponent } from './component/partials/navbar/navbar.component';
 import { PagesNotFoundComponent } from './component/partials/pages-not-found/pages-not-found.component';
 import { LoginComponent } from './component/login/login.component';
-
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +24,13 @@ import { LoginComponent } from './component/login/login.component';
     LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
