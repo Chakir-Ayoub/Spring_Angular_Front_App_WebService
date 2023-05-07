@@ -1,3 +1,4 @@
+import { AccountService } from './../../services/account.service';
 import { TokenService } from './../../services/token.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,17 +19,11 @@ export class LoginComponent implements OnInit {
 
  ngOnInit() {
 }
-constructor(private authService: AuthService,private tokenService:TokenService,private router:Router){}
+constructor(private authService: AuthService,
+            private tokenService:TokenService,
+            private router:Router,
+            private accountService:AccountService){}
 
-
-
-// login() {
-//   this.authService.login(this.loginForm.value)
-//     .subscribe(res => {
-//       const data = JSON.parse(res.toString());
-//       console.log(data);
-//     });
-// }
 
 login(){
   this.authService.login(this.loginForm.value).subscribe(res=>this.handleResponse(res));
@@ -36,6 +31,7 @@ login(){
 
 handleResponse(res){
   this.tokenService.handle(res);
-  this.router.navigateByUrl("/address")
+  this.accountService.changesStatus(true);
+  this.router.navigateByUrl("/address");
 }
 }

@@ -7,6 +7,8 @@ import { LoginComponent } from './component/login/login.component';
 import { PagesNotFoundComponent } from './component/partials/pages-not-found/pages-not-found.component';
 import { AddAddressComponent } from './component/add-address/add-address.component';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
+import { AfterAuthGuard } from './guards/after-auth.guard';
 
 
 const routes: Routes = [
@@ -16,9 +18,9 @@ const routes: Routes = [
     {path:"",component:ListAddressComponent},
     {path:"create",component:AddAddressComponent},
     {path:"edit/:id",component:EditAddressComponent}
- ]
+ ],canActivate:[AuthGuard]
 },
-{path:"login",component:LoginComponent},
+{path:"login",component:LoginComponent,canActivate:[AfterAuthGuard]},
 {path:"**",component:PagesNotFoundComponent}
 
 ]
