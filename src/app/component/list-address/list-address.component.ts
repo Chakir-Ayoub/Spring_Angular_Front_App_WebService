@@ -1,3 +1,4 @@
+import { Address } from './../../models/address';
 import { AddressService } from './../../services/address.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,13 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class ListAddressComponent implements OnInit {
 
   constructor(private addressService:AddressService){}
+  addresse:Address[]=[];
   ngOnInit(): void {
     this.getAllAddress();
   }
 
   getAllAddress(){
-    this.addressService.getAll().subscribe(res=>{
-      console.log(res);
+    this.addressService.getAll().subscribe((res:Address[])=>{
+      this.addresse=res;
     })
   }
 }
