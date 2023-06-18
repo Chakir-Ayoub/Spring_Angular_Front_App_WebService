@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './services/jwt.interceptor';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SignUpComponent } from './component/sign-up/sign-up.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +24,17 @@ import { JwtInterceptor } from './services/jwt.interceptor';
     ListAddressComponent,
     NavbarComponent,
     PagesNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    MatDialogModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

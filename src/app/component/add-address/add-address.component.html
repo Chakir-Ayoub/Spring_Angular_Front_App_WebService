@@ -1,1 +1,35 @@
-<p>add-address works!</p>
+<div style="margin: 20px auto;">
+
+  <form [formGroup]="AddressForm" (ngSubmit)="onSubmit()">
+
+  <div class="card" #dialogContent>
+    <div class="card-body">
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control custom-input" placeholder="City" aria-label="city" aria-describedby="basic-addon1" formControlName="city">
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control custom-input" placeholder="Country" aria-label="country" aria-describedby="basic-addon2" formControlName="country">
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control custom-input" placeholder="Street" aria-label="street" aria-describedby="basic-addon3" formControlName="street">
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control custom-input" placeholder="Postal" aria-label="postal" aria-describedby="basic-addon4" formControlName="postal">
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control custom-input" placeholder="Type" aria-label="type" aria-describedby="basic-addon5" formControlName="type">
+      </div>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <button class="btn btn-primary"  type="Submit">Ajouter</button>
+      <button class="btn btn-secondary ml-2" routerLink="/address"  type="button">Annuler</button>
+    </div>
+
+  </div>
+  </form>
+</div>

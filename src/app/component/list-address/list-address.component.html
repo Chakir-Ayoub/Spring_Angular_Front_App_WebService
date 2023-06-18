@@ -2,9 +2,9 @@
   <div class="col-md-6">
     <h2>List of addresses</h2>
   </div>
-  <div class="col-md-6 text-right">
-    <button class="btn btn-primary">new</button>
-  </div>
+  <!-- <div class="col-md-6 text-right">
+    <button class="btn btn-primary" routerLink="/address/create">new</button>
+  </div> -->
 </div>
 
 
@@ -21,8 +21,10 @@
                   <li class="list-group-item"><strong>Postal :</strong> {{addresss.postal}} </li>
                   <li class="list-group-item"><strong>Country :</strong> {{addresss.country}} </li>
                   <li class="list-group-item text-center">
-                    <button class="btn btn-primary mr-2">Edit</button>
-                    <button class="btn btn-dark mr-2">Delete</button>
+                                           <!-- [routerLink]="['user', user.id, 'details']" -->
+
+                    <button class="btn btn-primary mr-2"  (click)="UpdateAddress(addresss.addressId)">Edit</button>
+                    <button class="btn btn-dark mr-2" (click)="DeleteAddress(addresss.addressId)">Delete</button>
                   </li>
               </ul>
             </div>

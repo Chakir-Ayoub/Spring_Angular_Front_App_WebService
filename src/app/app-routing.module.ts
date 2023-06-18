@@ -9,10 +9,12 @@ import { AddAddressComponent } from './component/add-address/add-address.compone
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { AfterAuthGuard } from './guards/after-auth.guard';
+import { SignUpComponent } from './component/sign-up/sign-up.component';
 
 
 const routes: Routes = [
  {path:"",redirectTo:"/address",pathMatch:'full'},
+ {path:"sign_up",component:SignUpComponent},
  {path:"address",children:
  [
     {path:"",component:ListAddressComponent},
@@ -22,6 +24,7 @@ const routes: Routes = [
 },
 {path:"login",component:LoginComponent,canActivate:[AfterAuthGuard]},
 {path:"**",component:PagesNotFoundComponent}
+
 
 ]
 
